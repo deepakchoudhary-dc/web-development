@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    #paymentForm {
+      max-width: 400px;
+      font-size: 16px;
+    }
+
+    #paymentForm label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+
+    }
+
+    #paymentForm input {
+          width: 95%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    }
+
+    #paymentForm button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 94%;
+    margin: 0%;
+    margin-top: 6%;
+    border: 4px solid white;
+    border-radius: 2rem;
+    }
+
+    #paymentForm button:hover {
+      background-color: white;
+      color: black;
+      
+      font-family: "Dancing Script", cursive;
+      border: 5px solid black;
+    }
+  </style>
+  <link rel="stylesheet" href="index3.css" />
+</head>
+
+<body>
+  <table id="table-el">
+    <tr>
+      <th>Serial No.</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Amount</th>
+    </tr>
+  </table>
+  <p id="total-el"></p>
+  <button id="order-btn" onclick="order()">Proceed to Payment</button>
+  <div id="options"></div>
+  <div id="details"></div>
+  <script src="index3.js"></script>
+</body>
+
+</html>

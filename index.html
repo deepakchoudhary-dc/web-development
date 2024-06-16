@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+    .btn-53,
+    .btn-53 *,
+    .btn-53 :after,
+    .btn-53 :before,
+    .btn-53:after,
+    .btn-53:before {
+      border: 0 solid;
+      box-sizing: border-box;
+    }
+    .logo {
+      width: 150px; /* Adjust the width as needed */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 20px; /* Space below the logo */
+    }
+
+    .btn-53 {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-appearance: button;
+      background-color: #000000;
+      background-image: none;
+      color: #ffffff;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      font-size: 100%;
+      line-height: 1.5;
+      margin-top: 20px;
+      -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+      padding: 0;
+      border-radius: 10px;
+    }
+
+    .btn-53:disabled {
+      cursor: none;
+    }
+
+    .btn-53:-moz-focusring {
+      outline: auto;
+    }
+
+    .btn-53 svg {
+      display: block;
+      vertical-align: middle;
+    }
+
+    .btn-53 [hidden] {
+      display: none;
+    }
+
+    .btn-53 {
+      border-radius: 999px;
+      box-sizing: border-box;
+      display: block;
+      font-weight: 900;
+      padding: 1.2rem 3rem;
+      position: relative;
+    }
+
+    .btn-53 .original {
+      background: #fff;
+      color: #000000;
+      display: grid;
+      inset: 0;
+      place-content: center;
+      position: absolute;
+      font-size: 28px;
+      transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+    }
+
+    .btn-53:hover .original {
+      transform: translateY(100%);
+    }
+
+    .btn-53 .letters {
+      display: inline-flex;
+      font-size: 20px;
+    }
+
+    .btn-53 span {
+      opacity: 0;
+      transform: translateY(-15px);
+      transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s;
+    }
+
+    .btn-53 span:nth-child(2n) {
+      transform: translateY(15px);
+    }
+
+    .btn-53:hover span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn-53:hover span:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .btn-53:hover span:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    .btn-53:hover span:nth-child(4) {
+      transition-delay: 0.3s;
+    }
+
+    .btn-53:hover span:nth-child(5) {
+      transition-delay: 0.4s;
+    }
+
+    .btn-53:hover span:nth-child(6) {
+      transition-delay: 0.5s;
+    }
+
+    .btn-53:hover span:nth-child(7) {
+      transition-delay: 0.6s;
+    }
+
+    .btn-53:hover span:nth-child(8) {
+      transition-delay: 0.7s;
+    }
+    button {
+  border-radius: 0; /* Ensure all buttons have square borders */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+  color: white;
+  margin-right: 20px;
+}
+
+
+
+
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: "Dancing Script", cursive;
+      background: linear-gradient(rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)), url(images/background.jpeg) center/cover fixed no-repeat;
+    }
+
+    #line {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 20%; /* Updated border radius */
+}
+
+/* Existing CSS continues below */
+
+
+    button {
+      border-radius: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: "Dancing Script", cursive;
+      font-size: 30px;
+      color: white;
+      margin-right: 20px;
+    }
+
+    img {
+      border: 6px solid white;
+      border-radius: 100%;
+      width: 15rem;
+      transition-duration: 100ms;
+      height: 10rem;
+    }
+
+    #breakfast,
+    #lunch,
+    #snacks,
+    #dinner {
+      margin-left: 20px;
+    }
+
+    #name {
+      font-size: 7rem;
+      margin-bottom: 20px;
+    }
+
+    img:hover {
+      transform: translate(10px, 10px);
+    }
+    
+
+    .popup-bg {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #222;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+      opacity: 1;
+      transform: translateY(-50px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      width: 100%;
+    }
+
+    .popup-content form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .popup-content label {
+      margin: 10px 0;
+    }
+
+    .popup-content input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+    }
+
+    .popup-content input[type="submit"] {
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .popup-content h2 {
+      margin-bottom: 15px;
+    }
+
+    .popup-content .close {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 65px;
+      color: white;
+      margin-top: -34px;
+    }
+
+    .popup-bg.active .popup-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <link rel="stylesheet" href="index1.css" />
+  <link rel="stylesheet" href="new.css"/>
+</head>
+
+<body>
+  <img src="images/logo1.png" alt="Your Logo" class="logo" />
+  <span id="name"><b>Choose your cuisine</b></span>
+  <div id="line">
+    <a href="index2.html"><button id="breakfast">
+        <img src="images/breakfast.jpg" alt="" /><br /><b>Breakfast</b>
+      </button></a>
+    <a href="index5.html"><button id="lunch">
+        <img src="images/lunch.jpg" alt="" /><br /><b>Lunch</b>
+      </button></a>
+    <a href="index6.html"><button id="snacks" class="snacks">
+        <img src="images/snacks.jpg" alt="" /><br /><b>Snacks</b>
+      </button></a>
+    <a href="index7.html"><button id="dinner">
+        <img src="images/dinner.jpg" alt="" /><br /><b>Dinner</b>
+      </button></a>
+  </div>
+
+  <button class="btn-53" onclick="togglePopup('registerPopup')">
+    <div class="original">
+      Register
+    </div>
+    <div class="letters">
+      <span>R</span>
+      <span>e</span>
+      <span>g</span>
+      <span>i</span>
+      <span>s</span>
+      <span>t</span>
+      <span>e</span>
+      <span>r</span>
+    </div>
+  </button>
+
+  <div class="popup-bg" id="registerPopup">
+    <div class="popup-content">
+      <span class="close" onclick="togglePopup('registerPopup')">&times;</span>
+      <h2>Registration Form</h2>
+      <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name1" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" />
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required />
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required />
+
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </div>
+
+  <div class="popup-bg" id="successPopup">
+    <div class="popup-content">
+      <span class="close"
+        onclick="togglePopup('successPopup'); document.getElementById('registerBtn').style.display = 'none';">&times;</span>
+      <h2>Registration Successful!</h2>
+    </div>
+  </div>
+
+  <script>
+    function togglePopup(popupId) {
+      const popup = document.getElementById(popupId);
+      popup.style.display = (popup.style.display === 'none' || popup.style.display === '') ? 'flex' : 'none';
+    }
+
+    function validateForm() {
+      const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+        alert("Please enter a valid email address");
+        return false;
+      }
+
+      if (!/^[0-9]{10}$/.test(phoneInput.value)) {
+        alert("Please enter a 10-digit phone number");
+        return false;
+      }
+
+      openSuccessPopup();
+      return false;
+    }
+
+    function openSuccessPopup() {
+      const successPopup = document.getElementById("successPopup");
+      successPopup.style.display = "flex";
+
+      setTimeout(() => {
+        togglePopup('registerPopup');
+        const registerButton = document.querySelector('.btn-53');
+        if (registerButton) {
+          registerButton.style.display = 'none';
+        }
+        successPopup.style.display = 'none';
+      }, 1000);
+    }
+  </script>
+</body>
+
+</html>
